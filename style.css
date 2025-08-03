@@ -1,0 +1,299 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;body {
+  background-color: #000021; /* or your desired color */
+}
+}
+
+body {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  background: url('images/4x/background.png') no-repeat center center/cover;
+  color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  position: relative;
+  padding: 0 15vw;
+}
+
+/* Container to push footer down */
+/* .container {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+} */
+
+.container {
+  width: 100%;
+  max-width: 1600px;
+  margin: 0 auto;
+  padding: 0 0vw;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+@media (max-width: 991px) {
+  .container {
+    padding: 0 8vw;
+  }
+}
+
+@media (max-width: 600px) {
+  .container {
+    padding: 0 5vw;
+  }
+}
+
+/* Header */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 0;
+  width: 100%;
+}
+
+.logo {
+  width: 120px;
+  height: auto;
+}
+
+.menu-icon {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  cursor: pointer;
+  z-index: 100;
+}
+
+.menu-icon span {
+  height: 2px;
+  width: 25px;
+  background-color: #fff;
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+
+/* Hero Section */
+.hero {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 40px 0;
+  flex-wrap: wrap;
+  gap: 70px;
+  flex: 1;
+}
+
+.hero-content {
+  flex: 1;
+  min-width: 300px;
+  max-width: 600px;
+}
+
+.hero h1 {
+  font-size: clamp(2rem, 5vw, 3rem);
+  /* Responsive font size */
+  font-weight: bold;
+  margin-bottom: 20px;
+  font-family: 'Mont-Bold', sans-serif;
+}
+
+.hero p {
+  font-size: clamp(0.95rem, 2vw, 1.1rem);
+  line-height: 1.7;
+  margin-bottom: 30px;
+  color: #ccc;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.btn {
+  text-decoration: none;
+  padding: 12px 24px;
+  border-radius: 25px;
+  font-size: 1rem;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+}
+
+.primary {
+  background-color: #a644ff;
+  color: white;
+}
+
+.primary:hover {
+  background-color: #9228e2;
+}
+
+.outline {
+  border: 2px solid #fff;
+  color: white;
+}
+
+.outline:hover {
+  background-color: #fff;
+  color: #000;
+}
+
+/* Coin Image */
+.hero-coin {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-width: 250px;
+  animation: float 1s ease-in-out infinite;
+}
+
+.hero-coin img {
+  max-width: 100%;
+  height: auto;
+  width: 300px;
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0px) rotate(0deg);
+  }
+
+  50% {
+    transform: translateY(-5px) rotate(1deg);
+  }
+
+  100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+}
+
+/* Footer */
+.footer {
+  width: 100%;
+  text-align: center;
+  color: #999;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 0;
+  margin-top: auto;
+  /* Pushes footer to bottom */
+}
+
+.social-icons {
+  display: flex;
+  gap: 20px;
+}
+
+.social-icons img {
+  width: 32px;
+  height: 32px;
+  transition: transform 0.3s ease;
+}
+
+.social-icons a:hover img {
+  transform: scale(1.1);
+}
+
+.copyright {
+  font-size: 0.9rem;
+}
+
+/* -----------------------------------
+   RESPONSIVE STYLES
+----------------------------------- */
+
+/* For Tablets and below (up to 991px) */
+@media (max-width: 991px) {
+  body {
+    padding: 0 8vw;
+  }
+
+  .hero {
+    flex-direction: column;
+    gap: 40px;
+    text-align: center;
+    margin: 40px 0;
+  }
+
+  .hero-content {
+    max-width: 100%;
+  }
+
+  .hero-buttons {
+    justify-content: center;
+  }
+
+  .footer {
+    flex-direction: column;
+    gap: 15px;
+    padding: 15px 0;
+  }
+}
+
+/* For Mobile devices (up to 600px) */
+@media (max-width: 600px) {
+  body {
+    padding: 0 5vw;
+  }
+
+  .logo {
+    width: 90px;
+  }
+
+  .hero {
+    margin: 30px 0;
+    gap: 30px;
+  }
+
+  .hero-coin img {
+    width: 200px;
+  }
+
+  .btn {
+    font-size: 0.9rem;
+    padding: 10px 20px;
+    width: 100%;
+  }
+
+  .hero-buttons {
+    gap: 10px;
+  }
+
+  .social-icons img {
+    width: 28px;
+    height: 28px;
+  }
+
+  .copyright {
+    font-size: 0.8rem;
+  }
+}
+
+/* For very small screens (up to 400px) */
+@media (max-width: 400px) {
+  .hero h1 {
+    font-size: 1.8rem;
+  }
+
+  .hero p {
+    font-size: 0.9rem;
+  }
+
+  .hero-coin img {
+    width: 180px;
+  }
+}
